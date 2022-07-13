@@ -12,6 +12,7 @@ import imgIcon4 from '../../../assets/Images/products/banana.png'
 import imgIcon5 from '../../../assets/Images/products/see-food.png'
 import eyeImg from '../../../assets/Images/eye.png'
 import refreshImg from '../../../assets/Images/refresh.png'
+import { Link } from 'react-router-dom'
 
 function Products() {
 
@@ -104,9 +105,11 @@ function Products() {
                           transform: `translateX(-${producItemSlider1 * 280 - 280}px)`
                         }}>
                           {item.productImg.map((img, inx) => (
-                            <li className="products__produc-img-item" key={inx + 1}>
-                              <img src={img} alt="produc" />
-                            </li>
+                            <Link to={`/cartPage/${item.id}`}>
+                              <li className="products__produc-img-item" key={inx + 1}>
+                                <img src={img} alt="produc" />
+                              </li>
+                            </Link>
                           ))}
                         </ul>
 
@@ -149,7 +152,9 @@ function Products() {
 
                       <div className="products__produc-desc">
                         <div>
-                          <p className='products__produc-name'>{item.name}</p>
+                          <Link to={`/cartPage/${item.id}`}>
+                            <p className='products__produc-name'>{item.name}</p>
+                          </Link>
                           <p className='products__produc-price'>
                             {item.discount !== 0 ? <span>${item.discount}.00 </span> : ""}
                             ${item.weight.length > 1 ? item.price[weightAct - 1] : item.price[0]}.00

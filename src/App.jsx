@@ -1,4 +1,3 @@
-
 import Home from './companents/Home/Home';
 import { Route, Routes } from 'react-router-dom';
 import CartPage from './companents/CartPage/CartPage';
