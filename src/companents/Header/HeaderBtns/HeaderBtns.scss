@@ -1,0 +1,65 @@
+@import "../../../App.scss";
+
+.header {
+  &__btns-box {
+    width: auto;
+    display: flex;
+    align-items: center;
+
+    button {
+      position: relative;
+      border: none;
+      font-size: 28px;
+      line-height: 28px;
+      color: $primary-color-1;
+      background: transparent;
+      margin-left: 10px;
+      opacity: 0.9;
+      font-weight: 500 !important;
+
+      i {
+        opacity: 0.7;
+        padding-top: 4px;
+      }
+      img {
+        width: 34px;
+        height: 34px;
+        object-fit: cover;
+      }
+      span {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        font-size: 15px;
+        padding: 2px 5px;
+        line-height: 15px;
+        font-family: sans-serif;
+        color: $primary-color-5;
+        background: $primary-color-2;
+        border-radius: $border-radius-3;
+      }
+    }
+  }
+  &__btn-user {
+    display: none;
+  }
+}
+
+// MEDIA PART =========================
+
+@media screen and (max-width: 768px) {
+  .header {
+    &__btns-box {
+      button {
+        margin: 0;
+      }
+    }
+    &__btn-user {
+      display: block;
+    }
+    &__btn-heart,
+    &__btn-compare {
+      display: none;
+    }
+  }
+}

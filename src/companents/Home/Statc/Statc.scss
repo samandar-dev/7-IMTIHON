@@ -1,0 +1,127 @@
+@import "../../../App.scss";
+
+.statc {
+  position: relative;
+  width: 100%;
+  height: auto;
+  &__inner {
+    width: 100%;
+    display: flex;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  &__menu-box {
+    width: 33%;
+    padding: 0 10px;
+  }
+  &__menu-title {
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 500;
+    color: $primary-color-1;
+    padding: 4px 3px;
+    margin-bottom: 30px;
+  }
+  &__menu-list {
+    margin: 0;
+    padding: 0;
+    width: auto;
+  }
+  &__menu-item {
+    margin-bottom: 25px;
+    display: flex;
+  }
+  &__menu-item-img-box {
+    position: relative;
+    width: 80px;
+    height: 88px;
+    overflow: hidden;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &:hover {
+      .statc__menu-item-icon {
+        opacity: 1;
+      }
+      .statc__menu-item-hover-box {
+        opacity: 1;
+      }
+    }
+  }
+  &__menu-item-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color-1;
+    background: $primary-color-5;
+    border-radius: $border-radius-3;
+    transition: all 0.2s ease;
+    padding: 5px;
+    z-index: 1;
+    opacity: 0;
+
+    &:hover {
+      background: $primary-color-2;
+      color: $primary-color-5;
+    }
+  }
+  &__menu-item-hover-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+    opacity: 0;
+  }
+  &__menu-item-desc {
+    margin-left: 20px;
+  }
+  &__menu-item-star-box {
+    position: relative;
+    width: 85px;
+    height: 16px;
+    display: inline-block;
+    margin-bottom: 5px;
+    img {
+      position: absolute;
+      top: 0;
+      left: -5px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: inline-block;
+    }
+  }
+  &__menu-item-name {
+    font-size: 16px;
+    line-height: 17px;
+    color: $primary-color-6;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+      color: $primary-color-2;
+    }
+  }
+  &__menu-item-price {
+    font-size: 16px;
+    line-height: 17px;
+    color: $primary-color-6;
+    span {
+      font-size: 15px;
+      color: $primary-color-4;
+      text-decoration: line-through;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@import "../../../App.scss";
+
+.service {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: $primary-color-5;
+  padding: 50px 0;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
+    justify-content: space-between;
+  }
+  &__item {
+    width: auto;
+    padding: 10px 40px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      span {
+        i {
+          animation: iconAnim 0.5s both linear;
+        }
+      }
+    }
+  }
+  &__icon {
+    font-size: 40px;
+    line-height: 45px;
+    color: $primary-color-2;
+    transition: all 0.5s ease;
+    i {
+      transform-origin: 50% 100%;
+    }
+  }
+  &__item-title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+
+    font-size: 17px;
+    line-height: 20px;
+    color: $primary-color-1;
+  }
+  &__item-text {
+    font-size: 15px;
+    line-height: 17px;
+    color: $primary-color-17;
+  }
+  @keyframes iconAnim {
+    20% {
+      transform: translateX(-4px);
+    }
+    30% {
+      transform: translateX(3px);
+    }
+    40% {
+      transform: translateX(-3px);
+    }
+    50% {
+      transform: translateX(-2px);
+    }
+    60% {
+      transform: translateX(1px);
+    }
+    80% {
+      transform: translateX(-1px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+}

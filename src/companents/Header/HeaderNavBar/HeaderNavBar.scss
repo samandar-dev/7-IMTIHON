@@ -1,0 +1,97 @@
+@import "../../../App.scss";
+
+.header {
+  &__navBar {
+    border: 1px solid #ececec;
+    border-left: none;
+    border-right: none;
+    margin-top: 40px;
+  }
+  &__navBar-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  &__navBar-categor {
+    position: relative;
+    width: 280px;
+    height: auto;
+    margin-right: 45px;
+    background: $primary-color-2;
+    border-top: 1px solid $primary-color-2;
+    border-radius: $border-radius-1 $border-radius-1 0 0;
+    cursor: pointer;
+    &:hover .header__navBar-categor-box {
+      z-index: 70;
+    }
+  }
+  &__navBar-categor-btn {
+    border: none;
+    padding: 17px 25px 15px 15px;
+
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    color: $primary-color-5;
+    background: $primary-color-2;
+    border-top: 1px solid transparent;
+
+    display: flex;
+    align-items: center;
+
+    i {
+      font-size: 21px;
+      margin-right: 12px;
+    }
+  }
+  &__navBar-categor-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 280px;
+    height: auto;
+    padding: 5px 0;
+    background: $primary-color-5;
+    border-radius: 0 0 $border-radius-2 $border-radius-2;
+    border: 2px solid $primary-color-2;
+    transition: all 0.3s ease;
+    z-index: 20;
+    &:hover {
+      z-index: 70;
+    }
+  }
+  &__navBar-categor-list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+// MEDIA PART =========================
+
+@media screen and (max-width: 1040px) {
+  .header {
+    &__navBar-tel {
+      display: none !important;
+    }
+    &__navBar-categor-box {
+      opacity: 0;
+      z-index: -200;
+    }
+    &__navBar-categor:hover {
+      .header__navBar-categor-box {
+        opacity: 1;
+        z-index: 200;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    &__navBar {
+      display: none;
+    }
+  }
+}

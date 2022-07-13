@@ -1,0 +1,331 @@
+@import "../../../App.scss";
+
+.deal {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 80px;
+  padding-bottom: 60px;
+
+  &__inner {
+    width: 100%;
+    height: 495px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__left {
+    position: relative;
+    width: 74%;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 25px 30px;
+    border: 1px solid $primary-color-2;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  &__left-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid $primary-color-14;
+  }
+  &__left-title {
+    font-size: 26px;
+    line-height: 34px;
+    color: $primary-color-1;
+  }
+  &__top-right {
+    display: flex;
+    align-items: center;
+
+    span {
+      width: 1px;
+      height: 10px;
+      background: $primary-color-4;
+      margin: 0 40px;
+    }
+  }
+  &__top-btn {
+    border: none;
+    font-size: 15px;
+    line-height: 15px;
+    color: $primary-color-4;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+
+    i {
+      font-size: 18px;
+      line-height: 18px;
+      margin-right: 5px;
+    }
+    &:hover {
+      color: $primary-color-1;
+    }
+  }
+  &__left-main {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    max-width: 830px;
+    overflow-x: hidden;
+  }
+  &__left-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    transition: all 0.5s ease;
+  }
+  &__left-item {
+    width: 830px;
+    height: auto;
+    display: flex;
+  }
+  &__left-main-img-box {
+    width: 100%;
+    max-width: 325px;
+    height: 360px;
+    margin-right: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__left-main-desc-box {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+  }
+  &__left-main-tit {
+    font-size: 15px;
+    line-height: 20px;
+    color: $primary-color-4;
+    margin-bottom: 10px;
+  }
+  &__left-main-title {
+    font-size: 23px;
+    line-height: 30px;
+    margin-bottom: 10px;
+    color: $primary-color-1;
+  }
+  &__left-main-price {
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 500;
+    color: $primary-color-18;
+    margin-bottom: 25px;
+
+    span {
+      font-size: 19px;
+      margin-right: 15px;
+      color: $primary-color-4;
+      text-decoration: line-through;
+    }
+  }
+  &__left-main-sale-box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+    margin-bottom: 20px;
+
+    div {
+      margin: 0 10px 10px;
+      text-align: center;
+      span {
+        width: 46px;
+        height: 44px;
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f1f1f1;
+        border-radius: 3px;
+        margin-bottom: 7px;
+      }
+      p {
+        font-size: 15px;
+        line-height: 15px;
+        font-weight: 500;
+        color: $primary-color-1;
+      }
+    }
+  }
+  &__left-main-sold-box {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  &__left-main-sold-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  &__left-main-sold,
+  &__left-main-residue {
+    font-size: 15px;
+    line-height: 15px;
+    color: $primary-color-1;
+
+    span {
+      color: $primary-color-2;
+      font-weight: 500;
+    }
+  }
+  &__left-main-residue {
+    span {
+      color: $primary-color-1;
+      font-weight: 500;
+    }
+  }
+  &__left-main-sold-anim-box {
+    position: relative;
+    width: 100%;
+    height: 12px;
+    background: $primary-color-14;
+    border-radius: $border-radius-2;
+    overflow: hidden;
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 60%;
+      height: 100%;
+      background: $primary-color-2;
+      border-radius: $border-radius-2;
+    }
+  }
+  &__left-main-sold-add-btn {
+    border: none;
+    padding: 12px 48px;
+
+    font-size: 15px;
+    line-height: 15px;
+    letter-spacing: 2px;
+    color: $primary-color-5;
+    background: $primary-color-2;
+    transition: all 0.2 ease;
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  // DEAL RIGHT PART =====================
+
+  &__right {
+    position: relative;
+    width: 25%;
+    height: auto;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  &__right-list {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    transition: all 0.5s ease;
+  }
+  &__right-item {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    margin-bottom: 23px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 1px solid $primary-color-8;
+    cursor: pointer;
+    opacity: 0.8;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -15px;
+      transform: translate(0, -50%);
+      border: 7px solid $primary-color-2;
+      border-left-color: transparent;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      transition: all 0.4s ease;
+      opacity: 0;
+    }
+    &:hover {
+      opacity: 1;
+      border: 1px solid $primary-color-2;
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  &__right-item-img-box {
+    width: 73px;
+    height: 80px;
+    overflow: hidden;
+    margin-right: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__right-item-desc {
+    width: auto;
+    height: auto;
+  }
+  &__right-item-title {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    color: $primary-color-1;
+    margin-bottom: 10px;
+  }
+  &__right-item-price {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    color: $primary-color-18;
+
+    span {
+      font-size: 15px;
+      color: $primary-color-4;
+      text-decoration: line-through;
+      margin-top: 10px;
+    }
+  }
+}
+.dealItemAct {
+  opacity: 1;
+  border: 1px solid $primary-color-2;
+  &::before {
+    opacity: 1;
+  }
+}

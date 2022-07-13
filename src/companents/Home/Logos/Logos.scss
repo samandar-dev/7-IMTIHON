@@ -1,0 +1,62 @@
+@import "../../../App.scss";
+
+.logos {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  &__inner {
+    position: relative;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+
+    &:hover {
+      .logos__slider-btn-left {
+        left: 0;
+        opacity: 1;
+      }
+      .logos__slider-btn-right {
+        right: 0;
+        opacity: 1;
+      }
+    }
+  }
+  &__list {
+    width: 100%;
+    height: auto;
+    transition: all 0.5s ease;
+    @include list-style;
+  }
+  &__item {
+    min-width: 200px;
+    height: 130px;
+    padding: 0 10px;
+
+    img {
+      width: 170px;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__slider-btn-left,
+  &__slider-btn-right {
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 30px;
+    line-height: 25px;
+    color: $primary-color-1;
+    background: transparent;
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
+  &__slider-btn-left {
+    left: 30px;
+  }
+  &__slider-btn-right {
+    right: 30px;
+  }
+}

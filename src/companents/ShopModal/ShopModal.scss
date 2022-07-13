@@ -1,0 +1,408 @@
+@import "../../App.scss";
+
+.shopmodal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -900;
+  transition: all 0.7s ease;
+  opacity: 0;
+
+  &__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    transition: all 0.7s ease;
+    z-index: 1200;
+    opacity: 0;
+  }
+  &__inner {
+    position: absolute;
+    top: 0;
+    right: -110%;
+    width: 24%;
+    height: 100%;
+    padding: 25px 50px;
+    background: $primary-color-5;
+    transition: all 0.7s ease;
+    z-index: 1500;
+    opacity: 0;
+  }
+  &__cart {
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+  }
+  &__remov-btn {
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    width: 43px;
+    height: 43px;
+    border: none;
+    display: flex;
+    font-size: 30px;
+    line-height: 30px;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color-1;
+    background: $primary-color-5;
+    border-radius: $border-radius-3;
+    border: 1px solid $primary-color-7;
+    transition: all 0.3s ease;
+    &:hover {
+      background: $primary-color-2;
+      color: $primary-color-5;
+    }
+  }
+  &__title {
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: $primary-color-1;
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 450px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__item {
+    display: flex;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $primary-color-7;
+  }
+  &__item-img-box {
+    width: 80px;
+    height: 88px;
+    border: 1px solid $primary-color-7;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__item-desc {
+    padding-left: 15px;
+    width: 80%;
+    height: auto;
+  }
+  &__item-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+  }
+  &__item-name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    color: $primary-color-1;
+  }
+  &__item-remove-btn {
+    border: none;
+    font-size: 20px;
+    line-height: 20px;
+    margin-right: -5px;
+    color: $primary-color-1;
+    background: transparent;
+  }
+  &__item-main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    span {
+      font-size: 15px;
+      line-height: 15px;
+      color: $primary-color-1;
+      margin-right: 5px;
+    }
+  }
+  &__item-add-rem-box {
+    position: relative;
+    width: auto;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+  }
+  &__item-add-rem-tit {
+    width: 35px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 15px;
+    background: $primary-color-5;
+    border: 1px solid $primary-color-7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    input {
+      border: none;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      height: 100%;
+      outline: none;
+      color: $primary-color-1;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+  &__item-add-btn,
+  &__item-rem-btn {
+    width: 21px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    line-height: 15px;
+    color: $primary-color-1;
+    background: $primary-color-5;
+    border: 1px solid $primary-color-7;
+    &:hover {
+      background: $primary-color-3;
+    }
+  }
+  &__item-rem-btn {
+    border-top: none;
+  }
+  &__item-price {
+    font-size: 15px;
+    line-height: 15px;
+    color: $primary-color-1;
+  }
+  &__item-subtotal {
+    margin-left: auto;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 15px;
+    color: $primary-color-1;
+  }
+  &__note-ship-cou-box {
+    width: 100%;
+    height: auto;
+  }
+  &__note-ship-cou-list {
+    @include list-style;
+    width: auto;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  &__note-ship-cou-item {
+    position: relative;
+    width: 33%;
+    padding: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid $primary-color-7;
+    &:nth-child(1) {
+      border-left: none;
+      border-right: none;
+    }
+    &:nth-child(2) {
+      border-right: none;
+      border-left: none;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        width: 1px;
+        height: 60%;
+        background: $primary-color-7;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+        width: 1px;
+        height: 60%;
+        background: $primary-color-7;
+      }
+    }
+    &:nth-child(3) {
+      border-right: none;
+      border-left: none;
+    }
+    &:hover {
+      span {
+        opacity: 1;
+      }
+      p {
+        color: $primary-color-2;
+      }
+    }
+
+    span {
+      width: 35px;
+      height: 30px;
+      display: inline-block;
+      opacity: 0.8;
+      img {
+        width: 35px;
+        height: 30px;
+        object-fit: cover;
+      }
+    }
+    p {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 14px;
+      color: $primary-color-1;
+    }
+  }
+  &__subtotal-box {
+    width: 100%;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $primary-color-7;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  &__subtotal-tit,
+  &__subtotal-price {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 17px;
+    color: $primary-color-1;
+    margin-bottom: 10px;
+  }
+  &__ship-tit,
+  &__ship-price {
+    font-size: 15px;
+    line-height: 15px;
+    color: $primary-color-1;
+  }
+  &__total {
+    width: 100%;
+    height: auto;
+  }
+  &__total-tit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    p {
+      font-size: 21px;
+      font-weight: 500;
+      line-height: 21px;
+      color: $primary-color-1;
+    }
+  }
+  &__total-anim {
+    position: relative;
+    width: 100%;
+    height: 7px;
+    background: $primary-color-20;
+    border-radius: $border-radius-2;
+    margin-bottom: 15px;
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 10%;
+      max-width: 100%;
+      height: 100%;
+      border-radius: $border-radius-2;
+      background: $primary-color-2;
+      display: inline-block;
+      z-index: 1;
+
+      p {
+        position: absolute;
+        top: -10px;
+        right: 0;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: default;
+        font-size: 15px;
+        line-height: 15px;
+        color: $primary-color-1;
+        background: $primary-color-5;
+        border: 2px solid $primary-color-2;
+        border-radius: $border-radius-3;
+      }
+    }
+  }
+  &__free-ship-tit {
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
+    color: $primary-color-1;
+    margin-bottom: 20px;
+    span {
+      color: $primary-color-2;
+      font-weight: 500;
+    }
+    b {
+      font-weight: 500;
+    }
+  }
+  &__viewCart-btn,
+  &__checkout-btn {
+    border: none;
+    width: 100%;
+    height: auto;
+    padding: 11px 30px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 2px;
+    color: $primary-color-1;
+    background: $primary-color-14;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    margin-bottom: 10px;
+  }
+  &__viewCart-btn:hover {
+    background: #dfdfdf;
+  }
+  &__checkout-btn {
+    margin-bottom: 0;
+    color: $primary-color-5;
+    background: $primary-color-2;
+    border-bottom-color: rgba(0, 0, 0, 0.4);
+    &:hover {
+      background: #629f0c;
+    }
+  }
+}
+.shopmodalShow {
+  opacity: 1;
+  z-index: 5000;
+}
+.shopmodalBackdropShow {
+  opacity: 1;
+}
+.shopmodalInnerShow {
+  right: 0;
+  opacity: 1;
+}

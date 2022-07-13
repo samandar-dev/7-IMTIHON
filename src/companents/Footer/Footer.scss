@@ -1,0 +1,204 @@
+@import "../../App.scss";
+
+.footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: $primary-color-19;
+  border-top: 1px solid $primary-color-7;
+  z-index: 50;
+  &__inner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  &__menu {
+    width: 300px;
+    padding: 0 10px;
+    &:nth-child(3) {
+      width: 600px;
+      margin-right: -20px;
+    }
+  }
+  &__logo-box {
+    width: 140px;
+    height: 35px;
+    margin-bottom: 36px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__menu-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  &__menu-item {
+    a {
+      display: inline-block;
+      text-decoration: none;
+    }
+  }
+  &__menu-item-tit {
+    font-size: 15px;
+    line-height: 24px;
+    padding: 4px 0;
+    transition: all 0.2s ease;
+    color: $primary-color-1;
+    &:hover {
+      color: $primary-color-2;
+    }
+  }
+  &__icon-box {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  &__icons-list {
+    width: auto;
+    @include list-style;
+  }
+  &__icons-item {
+    margin-right: 20px;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: $primary-color-1;
+      span {
+        font-size: 17px;
+        color: $primary-color-1;
+        transition: all 0.2s ease;
+        &:hover {
+          color: $primary-color-2;
+        }
+      }
+    }
+  }
+  &__form-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  &__title {
+    font-size: 21px;
+    line-height: 28px;
+    color: $primary-color-1;
+  }
+  &__form {
+    width: 100%;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    input {
+      border: none;
+      outline: none;
+      width: 60%;
+      font-size: 17px;
+      line-height: 24px;
+      padding: 5px 9px;
+      background: $primary-color-5;
+      border: 1px solid $primary-color-14;
+      margin-right: 5px;
+      margin-left: auto;
+    }
+    button {
+      border: none;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 15px;
+      letter-spacing: 2px;
+      padding: 11px 18px;
+      color: $primary-color-5;
+      background: $primary-color-2;
+      transition: all 0.2s ease;
+      opacity: 0.9;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  &__menu-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__menu-itemm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    border-bottom: 1px solid $primary-color-7;
+
+    &:nth-child(3) {
+      border: none;
+    }
+  }
+  &__menu-item-time {
+    font-size: 15px;
+    line-height: 24px;
+    color: $primary-color-1;
+    margin-left: 130px;
+  }
+  &__visa-paypal-img {
+    width: 190px;
+    height: 35px;
+    margin-top: 15px;
+    margin-left: auto;
+    text-align: right;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__bottom {
+    width: 100%;
+    height: auto;
+    padding: 20px 0px;
+    background: $primary-color-5;
+    border-top: 1px solid $primary-color-7;
+  }
+  &__bottom-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__bottom-left-tit {
+    font-size: 15px;
+    line-height: 45px;
+    color: $primary-color-1;
+  }
+  &__bottom-right-list {
+    width: auto;
+    margin-left: auto;
+    @include list-style;
+    padding-right: 15px;
+  }
+  &__bottom-righ-item {
+    margin-left: 15px;
+    a {
+      text-decoration: none;
+      display: inline-block;
+    }
+  }
+  &__bottom-right-tit {
+    font-size: 15px;
+    line-height: 45px;
+    color: $primary-color-1;
+    transition: all 0.2s ease;
+    &:hover {
+      color: $primary-color-2;
+    }
+  }
+}
